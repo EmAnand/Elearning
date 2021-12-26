@@ -1,0 +1,24 @@
+import { Component, NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { LoginComponent } from './login/login.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
+import { RegisterComponent } from './register/register.component';
+
+
+
+const routes: Routes = [
+  
+  {path:'register', component:RegisterComponent},
+
+  {path :'login', component: LoginComponent},
+  {path:'reset' , component:PasswordChangeComponent}
+ 
+  
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class LoginRoutingModule { }
