@@ -43,12 +43,10 @@
                         <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                         <div class="form-outline flex-fill mb-0">
                           <input type="number" #ContactNo="ngModel" placeholder="(xxx)-xxx-xxxx" id="ContactNo" 
-                          class="form-control" minlength="10" maxlength="10"  name="ContactNo" ngModel required Validators.pattern
-                          [pattern]="mobNumberPattern"/>
+                          class="form-control"  name="ContactNo"  ngModel contactValidator required/>
                           
                           <span *ngIf="ContactNo.invalid && ContactNo.touched" >Contact No is Required</span>
                           
-                        
                         </div>
                       </div>
                           </fieldset>
@@ -56,7 +54,8 @@
                       <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
                         <!-- <label class="form-label" for="Password">Password</label> -->
-                        <input type="password" #password="ngModel" placeholder="Password" class="form-control" id="password" name="Password"  ngModel passwordValidator required  />
+                        <input type="password" #password="ngModel" placeholder="Password" class="form-control" id="password" 
+                        name="Password"  ngModel passwordValidator required  />
                         <span *ngIf="password.invalid && password.touched">Password must be mininum 6 digit long</span>
                       </div>
                     </div>
@@ -64,8 +63,10 @@
                     <div class="d-flex flex-row align-items-center" class="form-group">
                       <div class="form-outline flex-fill mb-0">
                         <!-- <label class="form-label" for="ConfirmPassword">Repeat your password</label> -->
-                        <input type="password" #ConfirmPassword="ngModel" placeholder="Repeat your password" id="ConfirmPassword" class="form-control"   name="ConfirmPassword" ngModel required /> 
+                        <input type="password" #ConfirmPassword="ngModel" placeholder="Repeat your password"
+                        passwordValidator id="ConfirmPassword" class="form-control"   name="ConfirmPassword" ngModel required /> 
                         <span *ngIf="ConfirmPassword.invalid && ConfirmPassword.touched">ConfirmPassword is Required </span>
+                        <!-- <div *ngIf="ConfirmPassword.errors">Password and Confirm Password must be match.</div> -->
                       </div>
                     </div>
 
@@ -88,7 +89,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
   
-                  <img style="max-width: 100%;" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Sample image">
+                  <img style="max-width: 100%;" src="assets/register.jpg" alt="Sample image">
   
                 </div>
       </div>

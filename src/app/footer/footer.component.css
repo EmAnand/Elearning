@@ -9,11 +9,13 @@ section .section-title {
     color: #007b5e;
     margin-bottom: 50px;
     text-transform: uppercase;
+    
 }
 #footer {
     background: #007b5e !important;
 }
 #footer h5{
+    margin-left: 10px;
 	padding-left: 10px;
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
@@ -25,6 +27,7 @@ section .section-title {
     text-decoration: none !important;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
+     margin-left: 12px; 
 }
 #footer ul.social li{
 	padding: 3px 0;

@@ -55,7 +55,7 @@ login(event:any, username:any, password:any) {
   var success = this.http.login(username,  );
   if (success) {
     console.log(this.route);
-    this.route.navigate(['']);
+    this.route.navigate(['myhome']);
   } else {
     console.log("Login failed, display error to user");
   }
@@ -64,5 +64,10 @@ login(event:any, username:any, password:any) {
 closeAlert(){
   this.alert=false;
 }   
+
+// logout(){
+//  this.token= null;
+
+// }
 
     }

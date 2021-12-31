@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { NotificationsService } from 'angular2-notifications';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { LoginService } from '../login.service';
 })
 export class RegisterComponent implements OnInit {
 
-  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
+  
 
-  constructor(private http:LoginService) { }
+  constructor(private http:LoginService, private router:Router, 
+    private notificationService:NotificationsService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +31,27 @@ export class RegisterComponent implements OnInit {
       this.http.signup(f.value).subscribe((val)=>{
           //  let a = JSON.stringify(val)
           // localStorage.setItem('token', a)
-      console.log(val, "data created successfull")
-    })
+      console.log(val, "data created successfull",{
+        timeOut: 5000,
+          showProgressBar: true,
+          pauseOnHover: true,
+          clickToClose: true,
+          maxLength: 10
+      });
+      this.router.navigate(['']);
+    
+    } ,error=>{
+      this.notificationService.error('Register failed', 'Deatils are incorrect!',{
+        setTimeout:5000,
+        showProgressBar: true,
+          pauseOnHover: true,
+          clickToClose: true,
+          maxLength: 10
+      })
+    }
+    
+    
+    
+    )
   }
 }

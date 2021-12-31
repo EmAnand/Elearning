@@ -14,7 +14,9 @@ import { LoginRoutingModule } from './login/login-routing.module';
 import { LoginModule } from './login/login.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { CheckPasswordDirective } from './login/login/validaters/passwordValidators.Directive';
+import { MyHomeComponent } from './my-home/my-home.component';
+import { ExaminationComponent } from './examination/examination.component';
+
 
 
 
@@ -30,7 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    AboutComponent,  
+    AboutComponent,
+    MyHomeComponent,
+    ExaminationComponent,  
   ],
   imports: [
     BrowserModule,
