@@ -8,11 +8,8 @@ export class IlearningService {
 
   constructor(private http:HttpClient) { }
 
-  login(){
-    return this.http.post('http://api.1stresume.com/api/Identity/InsertUser',{
-      
-      
-    })
+  exam(){
+    return this.http.get('https://musj504rk9.execute-api.ap-south-1.amazonaws.com/default/GetQuestionAndAnswer');
   }
   
 }

@@ -12,8 +12,12 @@ multi:true}]
 })
 
 export class CheckPasswordDirective implements Validators{
-    validate(control: AbstractControl):{[key: string]:any}|null{
-        return control.value !==  CheckPasswordDirective? null : {'passwordError' : true}
+    validate(control: AbstractControl, password:string):{[key: string]:any}|null{
+         return control.value != CheckPasswordDirective? null : {'passwordError' : true}
+        //  return (control: AbstractControl): { [key: string]: any } | null => {
+        //       return control.value != password ? { 'emailError': true } : null;
+        //      };
+            
     
     
     }

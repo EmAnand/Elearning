@@ -65,7 +65,7 @@
                         <!-- <label class="form-label" for="ConfirmPassword">Repeat your password</label> -->
                         <input type="password" #ConfirmPassword="ngModel" placeholder="Repeat your password"
                         passwordValidator id="ConfirmPassword" class="form-control"   name="ConfirmPassword" ngModel required /> 
-                        <span *ngIf="ConfirmPassword.invalid && ConfirmPassword.touched">ConfirmPassword is Required </span>
+                        <span *ngIf="ConfirmPassword.invalid && ConfirmPassword.touched">ConfirmPassword does not match </span>
                         <!-- <div *ngIf="ConfirmPassword.errors">Password and Confirm Password must be match.</div> -->
                       </div>
                     </div>

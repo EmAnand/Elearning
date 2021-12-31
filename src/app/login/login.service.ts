@@ -16,7 +16,5 @@ export class LoginService {
     return this.http.post('http://api.1stresume.com/api/Identity/InsertUser' , model)
   }
 
-  exam(){
-    return this.http.get('https://musj504rk9.execute-api.ap-south-1.amazonaws.com/default/GetQuestionAndAnswer');
-  }
+ 
 }

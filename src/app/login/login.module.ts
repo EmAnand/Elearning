@@ -7,7 +7,7 @@ import { PasswordChangeComponent } from './password-change/password-change.compo
 import { CheckPasswordDirective } from './login/validaters/passwordValidators.Directive';
 import { CheckcontactDirective } from './login/validaters/ContactnoValidator.Directive ';
 import { CheckloginNameDirective } from './login/validaters/loginNameValidator.Directive';
-import { ExaminationComponent } from './examination/examination.component';
+
 
 
 
@@ -19,7 +19,8 @@ import { ExaminationComponent } from './examination/examination.component';
     CheckPasswordDirective,
     CheckcontactDirective,
     CheckloginNameDirective,
-    ExaminationComponent,
+
+
   ],
   imports: [
     CommonModule,

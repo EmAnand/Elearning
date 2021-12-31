@@ -12,7 +12,7 @@
  export class CheckloginNameDirective implements Validators{
      validate(control: AbstractControl):{[key: string]:any}|null{
          console.log(validateEmail(control.value))
-         return (control.value.length == 10 ||  validateEmail(control.value) != null)? null: {'passwordError' : true};
+         return ((control.value.length == 10 && !isNaN(control.value) )||  validateEmail(control.value) != null)? null: {'passwordError' : true};
          
      }
     };
