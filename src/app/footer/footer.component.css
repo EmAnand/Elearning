@@ -2,6 +2,7 @@
 
 section {
     padding: 60px 0;
+    
 }
 
 section .section-title {
@@ -15,6 +16,7 @@ section .section-title {
     background: #007b5e !important;
 }
 #footer h5{
+    
     margin-left: 10px;
 	padding-left: 10px;
     border-left: 3px solid #eeeeee;
@@ -23,6 +25,7 @@ section .section-title {
     color:#ffffff;
 }
 #footer a {
+    
     color: #ffffff;
     text-decoration: none !important;
     background-color: transparent;

@@ -7,6 +7,8 @@ import { PasswordChangeComponent } from './password-change/password-change.compo
 import { CheckPasswordDirective } from './login/validaters/passwordValidators.Directive';
 import { CheckcontactDirective } from './login/validaters/ContactnoValidator.Directive ';
 import { CheckloginNameDirective } from './login/validaters/loginNameValidator.Directive';
+import { TermconditionComponent } from './termcondition/termcondition.component';
+
 
 
 
@@ -19,6 +21,8 @@ import { CheckloginNameDirective } from './login/validaters/loginNameValidator.D
     CheckPasswordDirective,
     CheckcontactDirective,
     CheckloginNameDirective,
+    TermconditionComponent,
+    
 
 
   ],

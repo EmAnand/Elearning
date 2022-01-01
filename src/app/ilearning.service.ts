@@ -8,8 +8,9 @@ export class IlearningService {
 
   constructor(private http:HttpClient) { }
 
-  exam(){
-    return this.http.get('https://musj504rk9.execute-api.ap-south-1.amazonaws.com/default/GetQuestionAndAnswer');
-  }
+   exam(){
+     console.log("this method is work")
+     return this.http.get('http://localhost:3000/Item');
+   }
   
 }

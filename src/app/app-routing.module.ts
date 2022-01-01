@@ -18,7 +18,7 @@ const routes: Routes = [
   
   {path:'myhome', component:MyHomeComponent},
   {path: 'exam' , component:ExaminationComponent},
-  {path:'', component:HomeComponent},
+  {path:'', component:HomeComponent, pathMatch: 'full'},
   
 ];
 
