@@ -1,58 +1,48 @@
-import { Component, ComponentFactoryResolver, OnInit, ViewContainerRef } from '@angular/core';
-import { IlearningService } from '../ilearning.service';
-import { Router , ActivatedRoute, Params} from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-examination',
-  templateUrl: './examination.component.html',
-  styleUrls: ['./examination.component.css']
+  selector: 'app-optional-question',
+  templateUrl: './optional-question.component.html',
+  styleUrls: ['./optional-question.component.css']
 })
-export class ExaminationComponent implements OnInit {
-id:any;
-ToughId:number=4;
-Item:any= 'this is worked'
-data=result.filter(dt=>dt.ToughId=this.ToughId)[0];
+export class OptionalQuestionComponent implements OnInit {
+@Input() data:any;
+  constructor() {
+}
+az900:any;
 
-  constructor(private learn:IlearningService,  private router:Router,
-    private activeRouter:ActivatedRoute,     private viewContainerRef: ViewContainerRef,
-    private cfr: ComponentFactoryResolver
-) { }
-// async getLazy1() {
-//     this.viewContainerRef.clear();
-//     const { Lazy1Component } = await import('../optional-question/optional-question.component');
-//     this.viewContainerRef.createComponent(
-//       this.cfr.resolveComponentFactory(Lazy1Component)
-//     );
-//   }
-
+ 
   ngOnInit(): void {
+    //this.learn.exam().subscribe((resource)=>{
+      //this.data= resource;
+    //   console.log(this.data)
+    // })
     
-   this.id = this.activeRouter.paramMap.subscribe(Params =>{ this.id=Params.get('id')});
-   
+ // this.data=JSON.parse('test.json')
+ // console.log(this.data)
+  // this.data= result;
+  // console.log(this.data.Item)
+  
+console.log(this.data.Question.QuestionText)
+
+  }
   
 
-//  this.id = this.activatederoute.paramMap.subscribe(param=>  this.id=param.get('id'));
-  
-//  this.id=   this.activatedroute.paramMap.subscribe(params=>{
-//       this.id=params.get('id');
-//     })
-// this.id = this.activatedroute.paramMap.subscribe(params=> this.id=params.get('id'))
+  IsMultiCorrect(){
+  // console.log(this.data.Question.AnswerType== 'MultiCorrect' ? true:false);
+    return this.data.Question.AnswerType== 'MultiCorrect' ? true:false;
+  }
 
-// console.log(this.id) 
-// console.log("this is worked")
+   isDisplay =true;
+   toggleDisplay(){
 
-// console.log(this.data)
-// console.log(result.filter(dt=>dt.ToughId>4))
+     this.isDisplay= !this.isDisplay
+  }
 }
 
-Next(){
-    this.ToughId=3;
-  this.data=result.filter(dt=>dt.ToughId=this.ToughId)[0];
-}
-}
 
- var result= [ {
-  
+ var result=[{
+  "Item": {
       "CreationDate": 22122021,
       "ToughId": 5,
       "SubjectName": "Microsoft Certified: Azure Fundamentals",
@@ -85,11 +75,11 @@ Next(){
       },
       "Organization": "Microsoft",
       "PaperQuesionNo": 101
-  },
-
+  }
+},
 
 {
-  
+  "Item": {
       "CreationDate": 22122021,
       "ToughId": 4,
       "SubjectName": "Microsoft Certified: Azure Fundamentals",
@@ -125,12 +115,13 @@ Next(){
       "https://azure.microsoft.com/en-gb/overview/what-are-private-public-hybrid-clouds/"
           ]
       }
-  
+  }
 },
+
 {
-  
+  "Item": {
       "CreationDate": 22122021,
-      "ToughId": 3,
+      "ToughId": 4,
       "SubjectName": "Microsoft Certified: Azure Fundamentals",
       "SubjectId": "Mirosoft_AZ900",
       "Organization": "Microsoft",
@@ -152,6 +143,6 @@ Next(){
     "https://azure.microsoft.com/en-gb/overview/what-is-hybrid-cloud-computing/"
           ]
       }
-  
+  }
 }
  ]

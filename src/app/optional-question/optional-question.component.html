@@ -1,0 +1,56 @@
+
+
+ <!-- {{data.toString()}} 
+  -->
+  <div style="background-color: lightgray; padding: 15px;">
+    Question NO.{{data.PaperQuesionNo}}
+</div> 
+
+<div>
+   <p *ngFor="let resto of data.Question.QuestionText">
+    {{resto}}
+   </p>
+</div> 
+
+<div *ngIf="IsMultiCorrect()">
+    <p *ngFor="let resto  of data.Question.AnswerOption, let i =index">
+    <input type="checkbox"  id={{i}}> {{resto}}
+       </p>
+</div>
+
+<div *ngIf="!IsMultiCorrect()">
+    <p  *ngFor="let resto of data.Question.AnswerOption; let i =index ">
+    <input type="radio" id={{i}}> {{resto}}
+       </p>
+</div>
+
+<div style="margin:15px;">
+
+    <button type="button" class="btn btn-primary"> submit Answer </button>
+
+</div>  
+ 
+<!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Correct Answer</button>
+  <div id="demo" class="collapse">
+    <p *ngFor="let resto of data.Item.Question.CorrectAnswer">
+        {{resto}}
+        
+  </p> 
+  </div>  --> 
+  
+     <button type="button" class="btn btn-success" (click)="toggleDisplay()"> Correct Answer </button> 
+<div style="margin-top: 30px;" *ngIf="!isDisplay">
+    <p *ngFor="let resto of data.Question.CorrectAnswer">
+          {{resto}}
+          
+    </p> 
+</div>  
+<!-- <br><br>
+
+<div>
+    <a routerLink="/exam" routerLinkActive='activeLink'>
+
+    <button type="button" class="btn btn-success"  >Next</button>
+</a>
+</div> -->
+

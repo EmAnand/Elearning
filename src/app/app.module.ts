@@ -16,6 +16,9 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyHomeComponent } from './my-home/my-home.component';
 import { ExaminationComponent } from './examination/examination.component';
+import { ExamsComponent } from './exams/exams.component';
+import { OptionalQuestionComponent } from './optional-question/optional-question.component';
+import { StatementQuestionComponent } from './statement-question/statement-question.component';
 
 
 
@@ -34,7 +37,10 @@ import { ExaminationComponent } from './examination/examination.component';
     ContactComponent,
     AboutComponent,
     MyHomeComponent,
-    ExaminationComponent,  
+    ExaminationComponent,
+    ExamsComponent,
+    OptionalQuestionComponent,
+    StatementQuestionComponent,  
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,7 @@ import { ExaminationComponent } from './examination/examination.component';
     FormsModule,
     LoginModule,
     BrowserAnimationsModule, 
-    SimpleNotificationsModule.forRoot()   
+     SimpleNotificationsModule.forRoot()   
 
   ],
   providers: [],

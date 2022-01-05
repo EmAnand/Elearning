@@ -1,38 +1,14 @@
-<p>examination works!</p>
-
-     <!-- <ul>
-    <li scope="col">CreationDate</li>
-    <li scope="col">ToughId</li>
-    <li scope="col">SubjectName</li>
-    <li scope="col" >SubjectId</li>
-</ul> 
-
- <ul *ngFor="let user of data">
-     <li> {{user.CreationDate}} </li>
-    <li>{{user.ToughId}}</li>
-    <li>{{user.SubjectName}}</li>
-    <li>{{user.SubjectId}}</li> 
-
-</ul>  -->
-
-
-      <ul>
-          <li scope="col">CreationDate</li>
-          <li scope="col">ToughId</li>
-          <li scope="col">SubjectName</li>
-          <li scope="col">SubjectId</li>
-      </ul>
-  <ul *ngFor="let resto of data">
-      <li>{{resto.CreationDate}}</li>
-  </ul>
 
 
 
 
-<!-- <ul>
-<li *ngFor="let contact of (contacts | async)?.items">{{contact.name}}</li>
-</ul> -->
 
-<!-- <a  routerLink="/exam/az900" routerLinkActive="activeLink">  
-<button type="submit" class="btn btn-primary" > submit </button>
-</a> -->
+
+<app-optional-question [data]="data"></app-optional-question>
+<!-- <a routerLink="/exam/id"></a> -->
+
+<div>
+    
+
+    <button type="button" class="btn btn-success" (click)="Next()" >Next</button>
+</div>
