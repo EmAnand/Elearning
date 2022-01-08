@@ -20,15 +20,18 @@
 
 <div *ngIf="!IsMultiCorrect()">
     <p  *ngFor="let resto of data.Question.AnswerOption; let i =index ">
-    <input type="radio" id={{i}}> {{resto}}
+        <input type="radio" id={{i}} name="age" value="30">
+        <label for="age1">{{resto}}</label><br> 
+    
        </p>
 </div>
 
-<div style="margin:15px;">
+<!-- <div style="margin:15px;">
 
-    <button type="button" class="btn btn-primary"> submit Answer </button>
+ <span *ngFor="let resto of data.Question.AnswerOption"></span> 
+    <button type="button" class="btn btn-primary" (click)="Answer()"> submit Answer </button>
 
-</div>  
+</div>   -->
  
 <!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Correct Answer</button>
   <div id="demo" class="collapse">
@@ -38,19 +41,17 @@
   </p> 
   </div>  --> 
   
-     <button type="button" class="btn btn-success" (click)="toggleDisplay()"> Correct Answer </button> 
-<div style="margin-top: 30px;" *ngIf="!isDisplay">
+     <button type="button" class="btn btn-success" (click)="toggleDisplay()"> Check your Answer </button> 
+<div style="margin-top: 30px;" *ngIf="!isDisplay" >
     <p *ngFor="let resto of data.Question.CorrectAnswer">
-          {{resto}}
+        {{data.Question.AnswerOption[resto]}}
+          
+    </p>
+    <b>Details :</b> 
+    <p *ngFor="let Detail of data.Question.Details">
+         {{Detail}}
           
     </p> 
 </div>  
-<!-- <br><br>
 
-<div>
-    <a routerLink="/exam" routerLinkActive='activeLink'>
-
-    <button type="button" class="btn btn-success"  >Next</button>
-</a>
-</div> -->
 

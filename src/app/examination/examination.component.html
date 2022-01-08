@@ -4,11 +4,12 @@
 
 
 
-<app-optional-question [data]="data"></app-optional-question>
-<!-- <a routerLink="/exam/id"></a> -->
+<app-optional-question [data]="data" *ngIf="isOptional"></app-optional-question>
+<app-statement-question  *ngIf="!isOptional"></app-statement-question>
 
+<br><br>
 <div>
     
-
+    <button type="button" class="btn btn-success" (click)="Privious()"  [disabled]="PaperQuesionNo==101">Privious</button> &nbsp;
     <button type="button" class="btn btn-success" (click)="Next()" >Next</button>
 </div>

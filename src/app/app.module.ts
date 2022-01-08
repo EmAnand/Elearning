@@ -19,6 +19,7 @@ import { ExaminationComponent } from './examination/examination.component';
 import { ExamsComponent } from './exams/exams.component';
 import { OptionalQuestionComponent } from './optional-question/optional-question.component';
 import { StatementQuestionComponent } from './statement-question/statement-question.component';
+import { KeyvalueQuestionComponent } from './keyvalue-question/keyvalue-question.component';
 
 
 
@@ -40,7 +41,8 @@ import { StatementQuestionComponent } from './statement-question/statement-quest
     ExaminationComponent,
     ExamsComponent,
     OptionalQuestionComponent,
-    StatementQuestionComponent,  
+    StatementQuestionComponent,
+    KeyvalueQuestionComponent,  
   ],
   imports: [
     BrowserModule,

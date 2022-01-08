@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-optional-question',
   templateUrl: './optional-question.component.html',
@@ -23,7 +24,7 @@ az900:any;
   // this.data= result;
   // console.log(this.data.Item)
   
-console.log(this.data.Question.QuestionText)
+ //console.log(this.data.Question.QuestionText)
 
   }
   
@@ -31,13 +32,49 @@ console.log(this.data.Question.QuestionText)
   IsMultiCorrect(){
   // console.log(this.data.Question.AnswerType== 'MultiCorrect' ? true:false);
     return this.data.Question.AnswerType== 'MultiCorrect' ? true:false;
+  
   }
+  
 
    isDisplay =true;
    toggleDisplay(){
 
      this.isDisplay= !this.isDisplay
+    //
+    //     var ele =(RadioNodeList)document.getElementsByName('age');
+              
+    //  for(let i = 0; i < ele.length; i++) {
+    //      if((radio)ele[i].check)
+    //      document.getElementById("result").innerHTML
+    //              = "Gender: "+ele[i].value;
+    //  }
+    
+         // document.getElementsByName('age').innerHTML = "";
+            // var ele = document.getElementsByName('input');
+              
+            // for(let i = 0; i < ele.length; i++) {
+                  
+            //     if(ele[i].type="radio") {
+                  
+            //         if(ele[i].checked)
+            //             document.getElementsByName("age1").innerHTML
+            //                     += ele[i].name + " Value: "
+            //                     + ele[i].value + "<br>";
+            //     }
+            // }
+     
+            //var selectedOption = $("input:radio[name=option]:checked").val()
+
+//             var ele = document.getElementsByName('age1');
+//           var rate_value;
+//           for(var i = 0; i < ele.length; i++){
+//           if(ele[i].checked){
+//           rate_value = ele[i].id;
+//     }
+// }
   }
+
+  
 }
 
 

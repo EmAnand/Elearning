@@ -9,46 +9,46 @@ import { Router , ActivatedRoute, Params} from '@angular/router';
 })
 export class ExaminationComponent implements OnInit {
 id:any;
-ToughId:number=4;
-Item:any= 'this is worked'
-data=result.filter(dt=>dt.ToughId=this.ToughId)[0];
 
+PaperQuesionNo:number=101;
+Item:any= 'this is worked'
+data=result.filter(dt=>dt.ToughId=this.PaperQuesionNo)[0];
+isOptional:boolean=false;
   constructor(private learn:IlearningService,  private router:Router,
     private activeRouter:ActivatedRoute,     private viewContainerRef: ViewContainerRef,
     private cfr: ComponentFactoryResolver
 ) { }
-// async getLazy1() {
-//     this.viewContainerRef.clear();
-//     const { Lazy1Component } = await import('../optional-question/optional-question.component');
-//     this.viewContainerRef.createComponent(
-//       this.cfr.resolveComponentFactory(Lazy1Component)
-//     );
-//   }
+async getLazy1() {
+    this.viewContainerRef.clear();
+    const { OptionalQuestionComponent } = await import('../optional-question/optional-question.component');
+    this.viewContainerRef.createComponent(
+      this.cfr.resolveComponentFactory(OptionalQuestionComponent)
+    );
+  }
 
   ngOnInit(): void {
     
-   this.id = this.activeRouter.paramMap.subscribe(Params =>{ this.id=Params.get('id')});
+    this.isOptional=(this.data.Question.AnswerType=="MultiCorrect" || this.data.Question.AnswerType=="singleCorrect") ? true :false;
+    
+    this.id = this.activeRouter.paramMap.subscribe(Params =>{ this.id=Params.get('id')});
    
-  
 
-//  this.id = this.activatederoute.paramMap.subscribe(param=>  this.id=param.get('id'));
-  
-//  this.id=   this.activatedroute.paramMap.subscribe(params=>{
-//       this.id=params.get('id');
-//     })
-// this.id = this.activatedroute.paramMap.subscribe(params=> this.id=params.get('id'))
-
-// console.log(this.id) 
-// console.log("this is worked")
-
-// console.log(this.data)
+ console.log(this.data)
 // console.log(result.filter(dt=>dt.ToughId>4))
 }
+Privious(){
+    this.PaperQuesionNo=this.PaperQuesionNo-1;
+    this.data=result.filter(dt=>dt.PaperQuesionNo=this.PaperQuesionNo )[0];
+    //this.data=result.filter(dt=dt.ToughtId=this.toughtId)[-1]
 
-Next(){
-    this.ToughId=3;
-  this.data=result.filter(dt=>dt.ToughId=this.ToughId)[0];
 }
+Next(){
+    this.PaperQuesionNo=this.PaperQuesionNo+1;
+  this.data=result.filter(dt=>dt.PaperQuesionNo=this.PaperQuesionNo)[2];
+     console.log(this.data.PaperQuesionNo)
+  
+}
+
 }
 
  var result= [ {
@@ -73,12 +73,7 @@ Next(){
               "Which of the following are support plans that will allow this? ",
               "Your company intends to subscribe to an Azure support plan."
           ],
-          "CorrectAnswer": [
-              2,
-              3,
-              4,
-              5
-          ],
+          "CorrectAnswer": [1,2,3,4 ],
           "Details": [
               "https://azure.microsoft.com/en-us/support/plans/"
           ]
@@ -146,7 +141,9 @@ Next(){
               "You have 50 virtual machines hosted on-premises and 50 virtual machines hosted in Azure. The on-premises virtual machines and the Azure virtual machines connect to each other.",
               "Which type of cloud model is this?"
           ],
-          "CorrectAnswer": 1,
+          "CorrectAnswer":[ 
+          "A hybrid",
+        ],
           "Details": [
     "References:",
     "https://azure.microsoft.com/en-gb/overview/what-is-hybrid-cloud-computing/"
