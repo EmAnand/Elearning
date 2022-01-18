@@ -20,6 +20,10 @@ import { ExamsComponent } from './exams/exams.component';
 import { OptionalQuestionComponent } from './optional-question/optional-question.component';
 import { StatementQuestionComponent } from './statement-question/statement-question.component';
 import { KeyvalueQuestionComponent } from './keyvalue-question/keyvalue-question.component';
+import { QuestionComponent } from './question/question.component';
+import { DeactiveGuardServices } from './deactive-guard.services';
+import { QuestionActiveComponent } from './question-active/question-active.component';
+import { QuestionGuard } from './question.guard';
 
 
 
@@ -42,7 +46,9 @@ import { KeyvalueQuestionComponent } from './keyvalue-question/keyvalue-question
     ExamsComponent,
     OptionalQuestionComponent,
     StatementQuestionComponent,
-    KeyvalueQuestionComponent,  
+    KeyvalueQuestionComponent,
+    QuestionComponent,
+    QuestionActiveComponent,  
   ],
   imports: [
     BrowserModule,
@@ -53,10 +59,11 @@ import { KeyvalueQuestionComponent } from './keyvalue-question/keyvalue-question
     FormsModule,
     LoginModule,
     BrowserAnimationsModule, 
-     SimpleNotificationsModule.forRoot()   
+     SimpleNotificationsModule.forRoot(),
+     ReactiveFormsModule,   
 
   ],
-  providers: [],
+  providers: [DeactiveGuardServices, QuestionGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

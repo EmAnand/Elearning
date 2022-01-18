@@ -38,15 +38,19 @@ async getLazy1() {
 }
 Privious(){
     this.PaperQuesionNo=this.PaperQuesionNo-1;
-    this.data=result.filter(dt=>dt.PaperQuesionNo=this.PaperQuesionNo )[0];
+    this.data=result.filter(dt=>dt.PaperQuesionNo==this.PaperQuesionNo )[0];
     //this.data=result.filter(dt=dt.ToughtId=this.toughtId)[-1]
-
+    
 }
 Next(){
     this.PaperQuesionNo=this.PaperQuesionNo+1;
-  this.data=result.filter(dt=>dt.PaperQuesionNo=this.PaperQuesionNo)[2];
-     console.log(this.data.PaperQuesionNo)
-  
+  this.data=result.filter(dt=>dt.PaperQuesionNo==this.PaperQuesionNo)[0];
+     console.log(this.data.PaperQuesionNo);
+this.isOptional=(this.data.Question.AnswerType == "singleCorrect" || this.data.Question.AnswerType == "MultiCorrect") ? true:false;
+console.log(this.data.Question)
+     console.log(this.isOptional)
+
+ // this.data=result.filter(dt=>dt.PaperQuesionNo=this.PaperQuesionNo)[1];
 }
 
 }
@@ -141,9 +145,7 @@ Next(){
               "You have 50 virtual machines hosted on-premises and 50 virtual machines hosted in Azure. The on-premises virtual machines and the Azure virtual machines connect to each other.",
               "Which type of cloud model is this?"
           ],
-          "CorrectAnswer":[ 
-          "A hybrid",
-        ],
+          "CorrectAnswer":[0],
           "Details": [
     "References:",
     "https://azure.microsoft.com/en-gb/overview/what-is-hybrid-cloud-computing/"

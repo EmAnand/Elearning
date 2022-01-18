@@ -1,0 +1,28 @@
+<!-- <p>question-active works!</p> -->
+
+<div class="container"  >
+    <div class="Form-group">
+    
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="col-sm-12">
+        <label>First-Name</label><br>
+        <input type="text" First="First-name" id="firstname" #firstname="ngModel" class="form-control" ngModel>
+    </div>
+     <div class="col-sm-12" >
+        <label>Last-Name</label><br>
+        <input type="text" First="last-name" id="lastname" #lastname="ngModel" class="form-control" ngModel>
+    </div>
+    <div class="col-sm-12">
+        <label>Your-Message</label><br>
+        <!-- <input type="text" First="text-name" formControlName="textarea"> -->
+        <textarea id="w3review" name="textarea" id="textarea" #textarea="ngModel" rows="4" cols="50" class="form-control" ngModel>
+
+        </textarea>
+    </div> 
+    <div class=" colo-sm-12" class="button" >
+        
+        <button type="submit" class="btn btn-success">Submit </button>
+    </div>
+</form>
+</div>
+</div>

@@ -20,7 +20,7 @@
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
     <div class="container">
-      <a class="navbar-brand" rel="nofollow" target="_blank" href="http://scadonsak.com/7bF" style="text-transform: uppercase;"> NUSASATU.COM</a>
+      <a class="navbar-brand" rel="nofollow" target="_blank" href="http://scadonsak.com/7bF" style="text-transform: uppercase;"> First Resume</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,11 +37,14 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="login" routerLinkActive="activeLink">Log-In</a>
+            <a class="nav-link" routerLink="login" *ngIf="!loginServices.loggedIn()" routerLinkActive="activeLink">Log-In</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="register" routerLinkActive="activeLink">Register</a>
+            <a class="nav-link" routerLink="register" *ngIf="!loginServices.loggedIn()" routerLinkActive="activeLink">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  *ngIf="loginServices.loggedIn()" style="cursor: pointer;" (click)="logout()" >Logout</a>
           </li>
 
           <li class="nav-item">

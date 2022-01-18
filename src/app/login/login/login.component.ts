@@ -26,7 +26,7 @@ alert:boolean=true;
       this.http.login(f.value).subscribe((val:any)=>{
         this.alert = false;
         //let a = JSON.stringify(val)
-        localStorage.setItem('token', val.token)
+       // localStorage.setItem('token', val.token)
         this.notificationService.success('Login', 'You have logged-in successfully',{
           timeOut: 5000,
           showProgressBar: true,
@@ -50,16 +50,16 @@ alert:boolean=true;
     //console.log(f.form.)
 )}
   
-login(event:any, username:any, password:any) {
-  event.preventDefault();
-  var success = this.http.login(username,  );
-  if (success) {
-    console.log(this.route);
-    this.route.navigate(['myhome']);
-  } else {
-    console.log("Login failed, display error to user");
-  }
-}
+// login(event:any, username:any, password:any) {
+//   event.preventDefault();
+//   var success = this.http.login(username,  );
+//   if (success) {
+//     console.log(this.route);
+//     this.route.navigate(['myhome']);
+//   } else {
+//     console.log("Login failed, display error to user");
+//   }
+// }
       
 closeAlert(){
   this.alert=false;

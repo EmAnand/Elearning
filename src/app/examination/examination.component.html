@@ -5,7 +5,8 @@
 
 
 <app-optional-question [data]="data" *ngIf="isOptional"></app-optional-question>
-<app-statement-question  *ngIf="!isOptional"></app-statement-question>
+<app-statement-question  [data]="data" *ngIf="!isOptional"></app-statement-question>
+
 
 <br><br>
 <div>

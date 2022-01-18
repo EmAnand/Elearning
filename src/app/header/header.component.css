@@ -18,7 +18,9 @@ body {
     justify-content: space-between;
     padding: 5px;
 }
-
+.nav-link{
+  font-size: large;
+}
 /*
 headeer top
 */

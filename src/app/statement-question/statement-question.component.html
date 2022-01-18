@@ -1,7 +1,73 @@
-<p>statement-question works!</p>
-<!-- <div *ngIf="isStatement()">
-    <p *ngFor="let resto of data.Item.Question.AnswerOption, let i =index">
-    <input type="checkbox" id={{i}}> {{resto}}
+
+
+ <!-- {{data.toString()}} 
+  -->
+  <div style="background-color: lightgray; padding: 15px;">
+    Question NO.{{data.PaperQuesionNo}}
+</div> 
+
+<div>
+   <p *ngFor="let resto of data.Question.QuestionText">
+    {{resto}}
+   </p>
+</div> 
+
+<!-- <div *ngIf="IsMultiCorrect()">
+    <p *ngFor="let resto  of data.Question.AnswerOption, let i =index">
+    <input type="checkbox"  id={{i}}> {{resto}}
        </p>
 </div> -->
+
+<table >
+    <thead>
+        <tr style="background-color: lightgrey; font-weight: bold; border: 1px solid black;">
+            <td>Statement</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+    </thead>
+    <tr *ngFor="let resto of data.Question.AnswerOption; let i =index ">
+        <td style="border: lightgreen 2px solid; font-weight: bold; font-size: 13px;">
+             <label for="age1">{{resto}}</label><br> </td>
+        <td> <input type="radio" name={{i}} id="yes"  value="30">YES</td>
+        <td> <input type="radio" name={{i}} id="no" value="30"> NO</td>
+        
+    </tr>
+    
+       
+</table>
+
+
+<!-- <div style="margin:15px;">
+
+ <span *ngFor="let resto of data.Question.AnswerOption"></span> 
+    <button type="button" class="btn btn-primary" (click)="Answer()"> submit Answer </button>
+
+</div>   -->
+ 
+<!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Correct Answer</button>
+  <div id="demo" class="collapse">
+    <p *ngFor="let resto of data.Item.Question.CorrectAnswer">
+        {{resto}}
+        
+  </p> 
+  </div>  --> 
+  
+     <button type="button" class="btn btn-success" (click)="toggleDisplay()"> Check your Answer </button> 
+<div style="margin-top: 30px; background-color: lightgreen; padding: 18px; font-size: 12px; font-weight: bold;" *ngIf="!isDisplay" >
+    <div style="margin-top: 30px;" *ngIf="!isDisplay" >
+        <p *ngIf="isAnswerCorrect" style="color: green;">Your answer is correct</p>
+        <p *ngIf="!isAnswerCorrect" style="color: red;">Your answer is NOT correct</p>
+    <p *ngFor="let resto of data.Question.CorrectAnswer " >
+        
+        {{data.Question.AnswerOption[resto]}}
+          
+    </p>
+    <b>Details :</b> 
+    <p *ngFor="let Detail of data.Question.Details">
+         {{Detail}}
+          
+    </p> 
+</div>  
+
 

@@ -1,0 +1,27 @@
+
+<div class="container"  >
+    <div class="Form-group">
+    
+    <form [formGroup]="myForm"  (ngSubmit)="toSubmit()">
+    <div class="col-sm-12">
+        <label>First-Name</label><br>
+        <input type="text" First="First-name" class="form-control" formControlName="FirstName">
+    </div>
+    <div class="col-sm-12" >
+        <label>Last-Name</label><br>
+        <input type="text" First="last-name" class="form-control" formControlName="lastname">
+    </div>
+    <div class="col-sm-12">
+        <label>Your-Message</label><br>
+        <!-- <input type="text" First="text-name" formControlName="textarea"> -->
+        <textarea id="w3review" name="textarea" rows="4" cols="50" class="form-control" formControlName="textarea">
+
+        </textarea>
+    </div>
+    <div class=" colo-sm-12" class="button" >
+        
+        <button type="submit" class="btn btn-success">Submit </button>
+    </div>
+</form>
+</div>
+</div>
